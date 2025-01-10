@@ -37,10 +37,10 @@ export default {
       this.tasks = response.data;
     },
     async addTask(task) {
-      // Установим статус задачи по умолчанию на "New", если не указан явно
-      const newTask = { ...task, status: 'New'}; // Вы можете указать статус в зависимости от логики
+      // Статус задачи по умолчанию на "New", если не указан явно
+      const newTask = { ...task, status: 'New'}; // Статус в зависимости от логики
       const response = await axios.post('http://localhost:5000/api/tasks', newTask);
-      // Добавим новую задачу в локальный массив
+      // Новая задача в локальный массив
       this.tasks.push(response.data);
     },
     async deleteTask(id) {
